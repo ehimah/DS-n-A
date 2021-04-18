@@ -137,35 +137,3 @@ class Graph:
                 if helper(self.adj, n, None, visited):
                     return True
         return False
-
-
-def main():
-    # g = Graph()
-    # g.addEdge('A', 'B')
-    # g.addEdge('B', 'F')
-    # g.addEdge('G', 'H')
-    # g.addEdge('I', 'J')
-    # g.addEdge('A', 'C')
-    # g.addEdge('C', 'D')
-    # g.addEdge('C', 'E')
-    # g.addEdge('D', 'E')
-
-    # print(g.dfsCountConnectedComponents())
-    # g.removeEdge('A','B')
-    # g.removeEdge('A','C')
-    # g.removeEdge('C','D')
-    # g.removeEdge('C','E')
-    # g.removeEdge('D','E')
-    g2 = Graph()
-    g2.addEdge(0, 1)
-    g2.addEdge(0, 2)
-    g2.addEdge(1, 3)
-    g2.addEdge(2, 3)
-    g2.addEdge(3, 4)
-    g2.addEdge(4, 5)
-    g2.addEdge(4, 6)
-    # print(g2.shortestDistance(0))
-    print(g2.hasCycles())
-
-
-main()
