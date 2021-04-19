@@ -3,9 +3,16 @@ class Node:
         self.value = value
         self.next = None
 
+
 class LinkedList:
     def __init__(self) -> None:
-        self.head = Node(None)
+        self.head = None
+
+    def fromList(list):
+        l1 = LinkedList()
+        for i in list:
+            l1.append(i)
+        return l1
 
     def append(self, value):
         newNode = Node(value)
@@ -39,8 +46,8 @@ class LinkedList:
         self.head = prev
         return prev
 
-    #[3,4,5,6,7,8]
-    #[8,7]
+    # [3,4,5,6,7,8]
+    # [8,7]
     def reverseRecursive(self):
         def helper(node: Node):
             if not node.next:
@@ -53,3 +60,28 @@ class LinkedList:
             return newhead
 
         return helper(self.head)
+
+    def mergeSorted(l1: Node, l2: Node) -> Node:
+        head, p1, p2 = Node(0), l1, l2
+        curr = head
+
+        while p1 and p2:
+            if p1.value < p2.value:
+                curr.next = p1
+                p1 = p1.next
+            else:
+                curr.next = p2
+                p2 = p2.next
+            curr = curr.next
+
+        while p1:
+            curr.next = p1
+            p1 = p1.next
+            curr = curr.next
+
+        while p2:
+            curr.next = p2
+            p2 = p2.next
+            curr = curr.next
+
+        return head.next

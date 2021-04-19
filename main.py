@@ -1,4 +1,5 @@
 
+from LinkedLists.LinkedList import LinkedList
 from Trees.Trie import Trie
 from Graphs.Graph import Graph
 from Graphs.DirectedGraph import DirectedGraph
@@ -79,9 +80,18 @@ def runLRUCache():
         cache.print()
         print('--------------')
 
+def runLinkedListMergeSorted():
+    l1 = LinkedList.fromList([4, 5, 6, 7])
+    l2 = LinkedList.fromList([1, 2, 3, 10, 12])
+
+    curr = LinkedList.mergeSorted(l1.head, l2.head)
+
+    while curr:
+        print(curr.value)
+        curr = curr.next
 
 def main():
-    runDirectedGraph()
+    runLinkedListMergeSorted()
 
 
 main()
